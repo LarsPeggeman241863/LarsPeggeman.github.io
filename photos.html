@@ -5,7 +5,6 @@ title: Photo Gallery
 
 <!DOCTYPE html>
 <html lang="en">
-<!-- (rest of your head and body like you already have) -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -22,6 +21,7 @@ title: Photo Gallery
       padding: 15px;
       text-align: center;
     }
+
     nav a {
       color: white;
       margin: 0 15px;
@@ -70,11 +70,11 @@ title: Photo Gallery
   <h1>My Photography</h1>
 
   <div class="gallery">
-    {% for photo in site.photos %}
-      <img src="{{ photo.image }}" alt="{{ photo.alt | default: photo.title }}" />
+    {% assign photos = site.static_files | where_exp:"file", "file.path contains '/photography/'" %}
+    {% for photo in photos %}
+      <img src="{{ photo.path }}" alt="Photo" />
     {% endfor %}
   </div>
-  
 
 </body>
 </html>

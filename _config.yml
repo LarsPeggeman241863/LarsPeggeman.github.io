@@ -2,4 +2,4 @@ title: Lars Peggeman
 collections:
   photos:
     output: true
-    permalink: /Photography/:path/
+    permalink: /Photography/:name/
