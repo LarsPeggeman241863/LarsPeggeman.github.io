@@ -1,1 +1,154 @@
-achievements.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lars Peggeman - Achievements</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    nav {
+      background: #2c3e50;
+      padding: 15px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .buttons button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .buttons button:hover,
+    .buttons button.active {
+      background: #2980b9;
+    }
+
+    .achievement {
+      display: none;
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .achievement.visible {
+      display: block;
+    }
+
+    .category-label {
+      font-weight: bold;
+      color: #999;
+      font-size: 0.9em;
+      margin-bottom: 5px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h1>Achievements</h1>
+
+    <div class="buttons">
+      <button onclick="filterAchievements('all')" class="active">All</button>
+      <button onclick="filterAchievements('photography')">Photography</button>
+      <button onclick="filterAchievements('personal')">Personal</button>
+      <button onclick="filterAchievements('academic')">Academic</button>
+    </div>
+
+    <div class="achievement photography visible">
+      <div class="category-label">Photography</div>
+      <h3>Nature Photography Award (2023)</h3>
+      <p>Won first place in a national photography contest focusing on landscapes and wildlife.</p>
+    </div>
+
+    <div class="achievement personal visible">
+      <div class="category-label">Personal</div>
+      <h3>Completed 100 Days of Code Challenge</h3>
+      <p>Successfully committed to coding daily for 100 days, building small projects and learning new skills.</p>
+    </div>
+
+    <div class="achievement academic visible">
+      <div class="category-label">Academic</div>
+      <h3>Graduated Cum Laude (2024)</h3>
+      <p>Graduated top of class with high distinction from high school specializing in STEM subjects.</p>
+    </div>
+
+    <div class="achievement academic visible">
+      <div class="category-label">Academic</div>
+      <h3>AI Research Internship</h3>
+      <p>Worked on battery health classification using neural networks at Breda University of Applied Sciences.</p>
+    </div>
+
+  </div>
+
+  <script>
+    function filterAchievements(category) {
+      const achievements = document.querySelectorAll('.achievement');
+      const buttons = document.querySelectorAll('.buttons button');
+
+      achievements.forEach(el => {
+        el.classList.remove('visible');
+        if (category === 'all' || el.classList.contains(category)) {
+          el.classList.add('visible');
+        }
+      });
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
