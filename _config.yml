@@ -1,0 +1,7 @@
+title: Lars Peggeman
+theme: minima
+
+collections:
+  photos:
+    output: true
+    permalink: /photos/:Photography/

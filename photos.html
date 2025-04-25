@@ -1,5 +1,11 @@
+---
+layout: default
+title: Photo Gallery
+---
+
 <!DOCTYPE html>
 <html lang="en">
+<!-- (rest of your head and body like you already have) -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -64,9 +70,11 @@
   <h1>My Photography</h1>
 
   <div class="gallery">
-    <img src="Photography/Dauwrennen_2023.jpg" alt="Photo 1" />
-    <!-- Add more as needed -->
+    {% for photo in site.photos %}
+      <img src="{{ photo.image }}" alt="{{ photo.alt | default: photo.title }}" />
+    {% endfor %}
   </div>
+  
 
 </body>
 </html>
