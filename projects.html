@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lars Peggeman - Projects</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    nav {
+      background: #2c3e50;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .project {
+      background: white;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .project img {
+      width: 250px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .project-info {
+      flex: 1;
+    }
+    .project-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    .project-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .project-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h1>My Projects</h1>
+
+    <!-- Example Project -->
+    <div class="project">
+      <img src="your-image-url.jpg" alt="Project thumbnail" />
+      <div class="project-info">
+        <div class="project-title">Battery Classifier (AI Project)</div>
+        <p>This project classifies damaged vs intact batteries using a custom CNN trained on a dataset of 200 images per class. Implemented Grad-CAM visualization for explainability and deployed with Streamlit.</p>
+        <a href="https://github.com/yourusername/battery-classifier" class="project-link" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+    <!-- Add more projects below using the same structure -->
+    <div class="project">
+      <img src="another-image.jpg" alt="Project 2" />
+      <div class="project-info">
+        <div class="project-title">Handwriting Recognition</div>
+        <p>A CRNN and sliding-window hybrid model trained on custom handwriting data to convert handwritten text into digital characters. Achieved 95% accuracy with personalized preprocessing.</p>
+        <a href="https://github.com/yourusername/handwriting-recognition" class="project-link" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
