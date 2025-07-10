@@ -86,6 +86,19 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    .image-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 10px 0;
+    }
+    .image-scroll img {
+    max-height: 200px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    }
+
   </style>
 </head>
 <body>
@@ -116,7 +129,12 @@
     <div class="achievement photography visible">
         <div class="achievements_personal">Photography</div>
         <h3>Dauwrennen Photo's (29th of May, 2025)</h3>
-        <img src="Photography/IMG20250529064343.jpg" alt="Event photo" style="width:100%; max-height: 300px; object-fit: contain; border-radius: 8px;" />
+        <div class="image-scroll">
+          <img src="Photography/IMG20250529064343.jpg" alt="Event photo 1" />
+          <img src="Photography/IMG20250529061656.jpg" alt="Event photo 2" />
+          <img src="Photography/IMG20250529062012.jpg" alt="Event photo 3" />
+        </div>
+
         <p>Made multiple photo's that made where present on the official Den Hout dauwrennen website.</p>
       </div>
     
